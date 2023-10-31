@@ -144,7 +144,9 @@ track_times_from_disk == track_times
 
     True
 
-
+## CSV FORMAT DESCRIPTION
+- Design to contain tabular data where line of the file is a row and each column of data within the row is separated by a comma
+- Plain text, delimited format representing strings with a certain structure
 
 Great!
 
@@ -496,6 +498,10 @@ For example, if each record represented a country, there might be a unique ident
 In other cases, there are unique identifiers that are solely artifacts of the particular dataset and are not useful for merging. For example, if we went through all 2394 records in the Olympic medals dataset and assigned them IDs 0 through 2393, we would have a unique identifier, but it would not be a genuine feature of a given row and would not be useful for merging together additional data. SQL databases often have this type of unique identifier, called a "primary key".
 
 This dataset does not have a unique identifier, since almost all of the values appear more than once. There are multiple gold medals, multiple events from 2016, multiple men's events, etc. Nevertheless we could potentially merge it with other tables if *those* tables had one or more of these features. For example, we could add in the GDP of the athlete's home country for that year if we found a table of countries labeled similarly and their GDP by year.
+
+## Python CSV Description and Schema Interpretation
+- Using reader and DictReader can aid in reading in files including those with column headers using DictReader
+- Understanding schema is important in drawing logical conclusions from analysis of the data
 
 ### Schemas Conclusion
 
